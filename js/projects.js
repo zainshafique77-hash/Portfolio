@@ -18,15 +18,7 @@ function createCard(project) {
   const tech = document.createElement("p");
   tech.textContent = project.tech.join(", ");
 
-  const year = document.createElement("p");
-  year.className = "year";
-  year.textContent = String(project.year);
-
-  const link = document.createElement("a");
-  link.href = project.link;
-  link.textContent = "View " + project.title;
-
-  card.append(title, description, tech, year, link);
+  card.append(title, description, tech);
   item.appendChild(card);
   return item;
 }

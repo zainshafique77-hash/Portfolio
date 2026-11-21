@@ -1,4 +1,3 @@
-/* [Commit 10] Contact form validation */
 const form = document.getElementById("contact-form");
 const successBox = document.getElementById("form-success");
 
