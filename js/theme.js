@@ -1,4 +1,3 @@
-/* [Commit 4] Dark mode toggle that remembers the choice */
 (function () {
   const KEY = "theme";
   const root = document.documentElement;

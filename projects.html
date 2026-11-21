@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Zain Ul Abdin</title>
+  <meta name="description" content="Selected web projects by Zain Ul Abdin. Search by title or filter by technology.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">&gt;_ Zain Ul Abdin</a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button type="button" id="theme-toggle" class="btn btn-outline">Switch theme</button>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="section" aria-labelledby="projects-title">
+      <h1 id="projects-title">Projects</h1>
+
+      <div class="controls">
+        <div class="field">
+          <label for="search">Search by title or technology</label>
+          <input type="search" id="search" placeholder="e.g. grid">
+        </div>
+        <div class="field">
+          <label for="tech-filter">Technology</label>
+          <select id="tech-filter">
+            <option value="all">All technologies</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="result-count" class="muted" aria-live="polite"></p>
+      <p id="empty-message" class="empty" hidden>No projects found</p>
+      <ul id="project-grid" class="project-grid"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Zain Ul Abdin</p>
+      <ul class="nav-links">
+       <li><a href="https://github.com/zainshafique77-hash">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/zain-ul-abdin-677ab3425/">LinkedIn</a></li>
+        <li><a href="mailto:zainshafique77@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/projects.js" defer></script>
+</body>
+</html>
