@@ -187,16 +187,19 @@ textarea {
   font: inherit;
 }
 
-#tech-filter {
+#tech-filter,
+#subject {
   appearance: none;
   padding-right: 2.5rem;
 }
 
-.field:has(#tech-filter) {
+.field:has(#tech-filter),
+.field:has(#subject) {
   position: relative;
 }
 
-.field:has(#tech-filter)::after {
+.field:has(#tech-filter)::after,
+.field:has(#subject)::after {
   content: "";
   position: absolute;
   top: calc(1.6em + 0.35rem + 1.1rem);
@@ -253,6 +256,18 @@ textarea {
 }
 
 #contact-form { max-width: 40rem; }
+.contact-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: var(--space-4);
+}
+.contact-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
 textarea { resize: vertical; }
 fieldset { border: 1px solid var(--border); border-radius: var(--radius); margin: 0 0 var(--space-2); padding: var(--space-2); }
 legend { font-weight: 700; padding-inline: 0.25rem; }
@@ -267,4 +282,9 @@ input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: var(--ac
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   background: var(--card);
+}
+
+@media (max-width: 960px) {
+  .contact-content { grid-template-columns: 1fr; gap: var(--space-2); }
+  .contact-illustration { max-width: 24rem; }
 }
