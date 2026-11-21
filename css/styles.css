@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light theme (default) */
+  --bg: #f6f8fa;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --accent: #1a7f37;
+  --accent-contrast: #ffffff;
+  --card: #ffffff;
+  --border: #d0d7de;
+  --error: #cf222e;
+
+  --radius: 6px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 3rem;
+  --font: ui-monospace, "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  color-scheme: light;
+}
+
+/* Dark theme: follows the OS unless the user chose light manually */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #9aa4af;
+    --accent: #3fb950;
+    --accent-contrast: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --error: #ff7b72;
+    color-scheme: dark;
+  }
+}
+
+/* Dark theme: manual toggle */
+:root[data-theme="dark"] {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #9aa4af;
+  --accent: #3fb950;
+  --accent-contrast: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --error: #ff7b72;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.15; margin: 0 0 var(--space-2); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 0 0 var(--space-2); }
+h3 { font-size: 1.15rem; margin: 0 0 var(--space-1); }
+
+a { color: var(--accent); }
+
+.container {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.muted { color: var(--muted); }
+
+.skip-link {
+  position: absolute;
+  left: var(--space-1);
+  top: -4rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+}
+.skip-link:focus { top: var(--space-1); }
+
+/* Navbar (Flexbox) */
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+.logo {
+  font-weight: 700;
+  color: var(--fg);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: var(--fg); text-decoration: underline; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+/* Visible keyboard focus */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Hero and sections */
+.hero { padding-block: var(--space-4); }
+.prompt { color: var(--accent); margin: 0 0 var(--space-1); font-weight: 700; }
+.lead { max-width: 60ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 var(--space-3); }
+
+.section { padding-block: var(--space-3) var(--space-4); }
+.about { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.about img { border-radius: var(--radius); border: 1px solid var(--border); }
+.about p { max-width: 60ch; margin: 0; }
+
+.tags { display: flex; flex-wrap: wrap; gap: var(--space-1); list-style: none; margin: 0; padding: 0; }
+.tags li {
+  padding: 0.25rem 0.75rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.site-footer { border-top: 1px solid var(--border); padding-block: var(--space-3); color: var(--muted); }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); }
+.footer-inner p { margin: 0; }
