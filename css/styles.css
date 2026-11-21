@@ -251,3 +251,20 @@ textarea {
   .card { transition: transform 0.2s ease, border-color 0.2s ease; }
   .card:hover { transform: translateY(-3px); border-color: var(--accent); }
 }
+
+#contact-form { max-width: 40rem; }
+textarea { resize: vertical; }
+fieldset { border: 1px solid var(--border); border-radius: var(--radius); margin: 0 0 var(--space-2); padding: var(--space-2); }
+legend { font-weight: 700; padding-inline: 0.25rem; }
+.inline { display: inline-flex; align-items: center; gap: 0.5rem; margin-right: var(--space-2); font-weight: 400; min-height: 44px; }
+input[type="radio"],
+input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: var(--accent); }
+
+.error { color: var(--error); margin: 0; font-size: 0.9rem; }
+[aria-invalid="true"] { border-color: var(--error); }
+.success {
+  padding: var(--space-2);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--card);
+}
